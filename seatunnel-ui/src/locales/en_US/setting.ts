@@ -15,17 +15,20 @@
  * limitations under the License.
  */
 
-package org.apache.seatunnel.app.domain.dto.script;
-
-import lombok.Builder;
-import lombok.Data;
-
-@Builder
-@Data
-public class AddEmptyScriptDto {
-    private String name;
-    private byte type;
-    private int creatorId;
-    private int menderId;
-    private byte status;
+export default {
+  table_setting: 'Table Setting',
+  sequence_column: 'Sequence Column',
+  data_unique_value: 'Data Unique Value',
+  language_setting: 'Language Setting',
+  request_setting: 'Request Setting',
+  request_time: 'Request Time',
+  language: 'Language',
+  theme_setting: 'Theme Setting',
+  theme: 'Theme',
+  english: 'English',
+  light: 'Light',
+  model: 'Model',
+  hue: 'Hue',
+  purple: 'Purple',
+  fillet: 'Fillet'
 }

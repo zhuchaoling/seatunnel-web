@@ -15,11 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.seatunnel.app.domain.response.script;
+package org.apache.seatunnel.spi.scheduler.enums;
 
-import lombok.Data;
-
-@Data
-public class AddEmptyScriptRes {
-    private int id;
+public enum InstanceStatusEnum {
+    RUNNING,
+    STOPPED,
+    FAILED,
+    SUCCESS,
+    UNKNOWN,
+    ;
 }

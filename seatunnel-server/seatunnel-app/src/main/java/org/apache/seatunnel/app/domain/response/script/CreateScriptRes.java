@@ -15,37 +15,11 @@
  * limitations under the License.
  */
 
-import { reactive, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+package org.apache.seatunnel.app.domain.response.script;
 
-export function useDetailOverview() {
-  const { t } = useI18n()
-  const state = reactive({
-    loading: ref(false),
-    columns: [],
-    tableData: [{ name: '' }]
-  })
+import lombok.Data;
 
-  const createColumns = (state: any) => {
-    state.columns = [
-      {
-        title: t('data_pipes.name'),
-        key: 'name'
-      },
-      {
-        title: t('data_pipes.execute_time'),
-        key: 'executeTime'
-      },
-      {
-        title: t('data_pipes.end_time'),
-        key: 'endTime'
-      },
-      {
-        title: t('data_pipes.state'),
-        key: 'state'
-      }
-    ]
-  }
-
-  return { state, createColumns }
+@Data
+public class CreateScriptRes {
+    private int id;
 }

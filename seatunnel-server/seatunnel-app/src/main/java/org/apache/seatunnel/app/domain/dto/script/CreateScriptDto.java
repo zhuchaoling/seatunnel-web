@@ -15,38 +15,18 @@
  * limitations under the License.
  */
 
-import { useI18n } from 'vue-i18n'
-import { reactive, h } from 'vue'
-import { useRouter } from 'vue-router'
-import type { Router } from 'vue-router'
+package org.apache.seatunnel.app.domain.dto.script;
 
-export function useSettingDropdown() {
-  const { t } = useI18n()
-  const router: Router = useRouter()
+import lombok.Builder;
+import lombok.Data;
 
-  const dropdownOptions = [
-    {
-      key: 'header',
-      type: 'render',
-      render: () =>
-        h('h3', { class: ['py-1.5', 'px-3', 'font-medium'] }, t('menu.manage'))
-    },
-    {
-      key: 'header-divider',
-      type: 'divider'
-    },
-    { key: 'user-manage', label: t('menu.user_manage') }
-  ]
-
-  const state = reactive({
-    dropdownOptions
-  })
-
-  const handleSelect = (key: string) => {
-    if (key === 'user-manage') {
-      router.push({ path: '/user-manage' })
-    }
-  }
-
-  return { state, handleSelect }
+@Builder
+@Data
+public class CreateScriptDto {
+    private String name;
+    private byte type;
+    private int creatorId;
+    private int menderId;
+    private byte status;
+    private String content;
 }
